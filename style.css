@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: black;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('bk.png');
+    background-repeat: no-repeat;
+    background-position: top-center;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.weather {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#location {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.desc {
+    font-size: 1.25rem;
+    text-transform: capitalize;
+}
+
+.input {
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+.input-box {
+    width: 90%;
+    background-color: rgba(243, 235, 235, 0.5);
+    border: none;
+    outline: none;
+    color: #08070e;
+    font-size: 25px;
+    height: 50px;
+    border-radius: 5px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.weather-body {
+    display: none;
+    color: #0e0d0d;
+    line-height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(138, 160, 192, 0.5);
+    text-align: center;
+    height: 50%;
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+
+.city {
+    font-size: 1.5rem;
+}
+
+.location {
+    font-weight: bold;
+
+}
+
+.weather-status {
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.temp {
+    font-size: 50pt;
+    font-weight: 700;
+    margin: 20px 0;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0);
+    text-align: center;
+
+}
+
+.min-max,
+.weather {
+    font-size: 12pt;
+    font-weight: 600;
+    text-align: center;
+}
+
+.weather {
+    font-size: 12pt;
+    font-weight: 600;
+    justify-content: center;
+}
+
+.box {
+    width: 20vw;
+    height: 70vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+    background: #4771ca;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    min-width: 20rem;
+    min-height: 35rem;
+}
+
+.wave.-one {
+    opacity: 0.3;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    background: #fff;
+    width: 50rem;
+    height: 50rem;
+    margin-left: -25rem;
+    margin-top: -25rem;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+    z-index: 1;
+}
+
+.wave.-two {
+    animation: drift 7000ms infinite linear;
+    opacity: 0.1;
+    z-index: 3 !important;
+}
+
+.wave.-three {
+    animation: drift 7000ms infinite linear;
+    z-index: 2 !important;
+    opacity: 0.2;
+}
+
+.box::after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+}
+
+.fa-street-view {
+    animation: rotates 3s linear infinite alternate;
+    font-size: 3rem;
+}
+
+@keyframes rotates {
+    from {
+        transform: translateX(-0.5rem);
+    }
+
+    to {
+        transform: translateX(0.5rem);
+    }
+}
+
+@keyframes drift {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        width: 20vw;
+    }
+}
